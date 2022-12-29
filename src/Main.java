@@ -1,3 +1,4 @@
+import dominio.Conteudo;
 import dominio.Curso;
 import dominio.Mentoria;
 
@@ -20,10 +21,6 @@ public class Main {
         curso3.setDescricao("Introdução a linguagem Kotlin");
         curso3.setCargahoraria(7);
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(curso3);
-
         Mentoria mentoria1 = new Mentoria();
         mentoria1.setTitulo("Mentoria de Java");
         mentoria1.setDescricao("Descrição da mentoria para Java");
@@ -38,6 +35,10 @@ public class Main {
         mentoria3.setTitulo("Mentoria de Kotlin");
         mentoria3.setDescricao("Descrição da mentoria para Kotlin");
         mentoria3.setData(LocalDate.now());
+
+        System.out.println(curso1);
+        System.out.println(curso2);
+        System.out.println(curso3);
 
         System.out.println(mentoria1);
         System.out.println(mentoria2);
