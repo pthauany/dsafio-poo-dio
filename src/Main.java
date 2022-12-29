@@ -1,6 +1,4 @@
-import dominio.Conteudo;
-import dominio.Curso;
-import dominio.Mentoria;
+import dominio.*;
 
 import java.time.LocalDate;
 
@@ -16,32 +14,39 @@ public class Main {
         curso2.setDescricao("Introdução a linguagem Javascript");
         curso2.setCargahoraria(5);
 
-        Curso curso3 = new Curso();
-        curso3.setTitulo("Kotlin Experience");
-        curso3.setDescricao("Introdução a linguagem Kotlin");
-        curso3.setCargahoraria(7);
-
         Mentoria mentoria1 = new Mentoria();
         mentoria1.setTitulo("Mentoria de Java");
         mentoria1.setDescricao("Descrição da mentoria para Java");
         mentoria1.setData(LocalDate.now());
 
-        Mentoria mentoria2 = new Mentoria();
-        mentoria2.setTitulo("Mentoria de Javascript");
-        mentoria2.setDescricao("Descrição da mentoria para Javascript");
-        mentoria2.setData(LocalDate.now());
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria1);
 
-        Mentoria mentoria3 = new Mentoria();
-        mentoria3.setTitulo("Mentoria de Kotlin");
-        mentoria3.setDescricao("Descrição da mentoria para Kotlin");
-        mentoria3.setData(LocalDate.now());
+        Dev devThauany = new Dev();
+        devThauany.setNome("Thauany");
+        devThauany.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Thauany: " + devThauany.getConteudosInscritos());
+        devThauany.progredir();
+        devThauany.progredir();
+        System.out.println("-");
+        System.out.println("Conteudos Inscritos Thauany: " + devThauany.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos Thauany: " + devThauany.getConteudosConcluidos());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(curso3);
+        System.out.println("-------------------------------------");
 
-        System.out.println(mentoria1);
-        System.out.println(mentoria2);
-        System.out.println(mentoria3);
+        Dev devJoao = new Dev();
+        devJoao.setNome("João");
+        devJoao.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos João: " + devJoao.getConteudosInscritos());
+        devJoao.progredir();
+        devJoao.progredir();
+        devJoao.progredir();
+        System.out.println("-");
+        System.out.println("Conteudos Inscritos João: " + devJoao.getConteudosInscritos());
+        System.out.printf("Conteúdos Concluídos João: " + devJoao.getConteudosConcluidos());
     }
 }
